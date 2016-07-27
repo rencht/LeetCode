@@ -17,6 +17,8 @@ public class A0001_TwoSumTest {
 	public void testTwoSum() throws Exception {
 		assertArrayEquals(new int[] { 0, 1 }, problem.twoSum(new int[] { 2, 7, 11, 15 }, 9));
 		assertArrayEquals(new int[] { 0, 3 }, problem.twoSum(new int[] { 1, 2, 2, 1 }, 2));
+
+		assertNull(problem.twoSum(new int[] { 2, 7, 11, 15 }, 1));
 	}
 
 }

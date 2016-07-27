@@ -36,6 +36,7 @@ public class A0008_StringToIntegerTest {
 		assertEquals(-123, problem.myAtoi("-123  	"));
 
 		assertEquals(0, problem.myAtoi("+-2112"));
+		assertEquals(0, problem.myAtoi("++2112"));
 		assertEquals(22, problem.myAtoi("22abc"));
 	}
 
