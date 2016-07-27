@@ -5,13 +5,13 @@ import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
 
-public class LongestSubstringWithoutRepeatingCharactersTest {
+public class A0003_LongestSubstringWithoutRepeatingCharactersTest {
 
-	private LongestSubstringWithoutRepeatingCharacters problem;
+	private A0003_LongestSubstringWithoutRepeatingCharacters problem;
 
 	@Before
 	public void setUp() throws Exception {
-		problem = new LongestSubstringWithoutRepeatingCharacters();
+		problem = new A0003_LongestSubstringWithoutRepeatingCharacters();
 	}
 
 	@Test

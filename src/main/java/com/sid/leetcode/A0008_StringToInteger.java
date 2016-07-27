@@ -13,7 +13,7 @@ package com.sid.leetcode;
  * @version 1.0, 2016-07-26
  *
  */
-public class StringToInteger {
+public class A0008_StringToInteger {
 
 	public int myAtoi(String str) {
 		String target = str.trim();

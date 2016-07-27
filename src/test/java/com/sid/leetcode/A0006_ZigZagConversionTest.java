@@ -5,13 +5,13 @@ import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
 
-public class ZigZagConversionTest {
+public class A0006_ZigZagConversionTest {
 
-	private ZigZagConversion problem;
+	private A0006_ZigZagConversion problem;
 
 	@Before
 	public void setUp() throws Exception {
-		problem = new ZigZagConversion();
+		problem = new A0006_ZigZagConversion();
 	}
 
 	@Test

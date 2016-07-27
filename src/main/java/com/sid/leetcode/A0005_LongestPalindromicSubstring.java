@@ -11,7 +11,7 @@ package com.sid.leetcode;
  * @version 1.0, 2016-07-22
  *
  */
-public class LongestPalindromicSubstring {
+public class A0005_LongestPalindromicSubstring {
 
 	public String longestPalindrome(String s) {
 		String palindrome = s.substring(0, 1);

@@ -5,13 +5,13 @@ import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
 
-public class StringToIntegerTest {
+public class A0008_StringToIntegerTest {
 
-	private StringToInteger problem;
+	private A0008_StringToInteger problem;
 
 	@Before
 	public void setUp() throws Exception {
-		problem = new StringToInteger();
+		problem = new A0008_StringToInteger();
 	}
 
 	@Test

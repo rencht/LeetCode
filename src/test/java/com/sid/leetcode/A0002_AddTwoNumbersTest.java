@@ -5,9 +5,9 @@ import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
 
-public class AddTwoNumbersTest {
+public class A0002_AddTwoNumbersTest {
 
-	private AddTwoNumbers problem;
+	private A0002_AddTwoNumbers problem;
 
 	private ListNode NUMBER_1;
 	private ListNode NUMBER_342;
@@ -19,7 +19,7 @@ public class AddTwoNumbersTest {
 
 	@Before
 	public void setUp() throws Exception {
-		problem = new AddTwoNumbers();
+		problem = new A0002_AddTwoNumbers();
 
 		NUMBER_1 = new ListNode(1);
 		NUMBER_342 = new ListNode(2, new ListNode(4, new ListNode(3)));

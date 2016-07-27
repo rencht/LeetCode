@@ -20,7 +20,7 @@ import java.util.List;
  * @version 1.0, 2016-07-11
  *
  */
-public class AddTwoNumbers {
+public class A0002_AddTwoNumbers {
 
     public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
     	if (l1 == null) return l2;

@@ -24,7 +24,7 @@ import java.util.Map;
  * @version 1.0, 2016-07-09
  *
  */
-public class TwoSum {
+public class A0001_TwoSum {
 
 	public int[] twoSum(int[] nums, int target) {
 		Map<Integer, Integer> mapping = new HashMap<Integer, Integer>();

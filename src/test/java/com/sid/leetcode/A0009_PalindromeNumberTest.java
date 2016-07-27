@@ -5,13 +5,13 @@ import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
 
-public class PalindromeNumberTest {
+public class A0009_PalindromeNumberTest {
 
-	private PalindromeNumber problem;
+	private A0009_PalindromeNumber problem;
 
 	@Before
 	public void setUp() throws Exception {
-		problem = new PalindromeNumber();
+		problem = new A0009_PalindromeNumber();
 	}
 
 	@Test

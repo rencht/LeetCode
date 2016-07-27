@@ -11,7 +11,7 @@ package com.sid.leetcode;
  * @version 1.0, 2016-07-26
  *
  */
-public class PalindromeNumber {
+public class A0009_PalindromeNumber {
 
 	public boolean isPalindrome(int x) {
 		if (x < 0) return false;

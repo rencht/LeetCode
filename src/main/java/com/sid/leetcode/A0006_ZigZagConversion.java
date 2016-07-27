@@ -29,7 +29,7 @@ package com.sid.leetcode;
  * @version 1.0, 2016-07-25
  *
  */
-public class ZigZagConversion {
+public class A0006_ZigZagConversion {
 
 	public String convert(String s, int numRows) {
 		if (s.length() <= numRows || numRows == 1) {

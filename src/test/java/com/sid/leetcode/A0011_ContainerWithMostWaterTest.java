@@ -5,13 +5,13 @@ import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
 
-public class ContainerWithMostWaterTest {
+public class A0011_ContainerWithMostWaterTest {
 
-	private ContainerWithMostWater problem;
+	private A0011_ContainerWithMostWater problem;
 
 	@Before
 	public void setUp() throws Exception {
-		problem = new ContainerWithMostWater();
+		problem = new A0011_ContainerWithMostWater();
 	}
 
 	@Test

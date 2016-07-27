@@ -15,7 +15,7 @@ package com.sid.leetcode;
  * @version 1.0, 2016-07-27
  *
  */
-public class ContainerWithMostWater {
+public class A0011_ContainerWithMostWater {
 
 	public int maxArea(int[] height) {
 		int max = 0;

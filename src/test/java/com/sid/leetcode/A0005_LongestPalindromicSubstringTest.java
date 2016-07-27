@@ -5,13 +5,13 @@ import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
 
-public class LongestPalindromicSubstringTest {
+public class A0005_LongestPalindromicSubstringTest {
 
-	private LongestPalindromicSubstring problem;
+	private A0005_LongestPalindromicSubstring problem;
 
 	@Before
 	public void setUp() throws Exception {
-		problem = new LongestPalindromicSubstring();
+		problem = new A0005_LongestPalindromicSubstring();
 	}
 
 	@Test

@@ -15,7 +15,7 @@ package com.sid.leetcode;
  * @version 1.0, 2016-07-26
  *
  */
-public class ReverseInteger {
+public class A0007_ReverseInteger {
 
 	static final int OVERFLOW = 0;
 

@@ -4,13 +4,13 @@ import static org.junit.Assert.*;
 
 import org.junit.*;
 
-public class TwoSumTest {
+public class A0001_TwoSumTest {
 
-	private TwoSum problem;
+	private A0001_TwoSum problem;
 
 	@Before
 	public void setUp() throws Exception {
-		problem = new TwoSum();
+		problem = new A0001_TwoSum();
 	}
 
 	@Test
