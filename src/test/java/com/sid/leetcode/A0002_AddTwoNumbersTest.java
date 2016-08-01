@@ -5,6 +5,8 @@ import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
 
+import com.sid.leetcode.A0002_AddTwoNumbers.ListNode;
+
 public class A0002_AddTwoNumbersTest {
 
 	private A0002_AddTwoNumbers problem;
