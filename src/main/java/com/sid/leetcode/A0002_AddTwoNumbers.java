@@ -1,9 +1,5 @@
 package com.sid.leetcode;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-
 /**
  * 2. Add Two Numbers.
  *
@@ -17,48 +13,37 @@ import java.util.List;
  * </blockquote>
  *
  * @author Sid.Chen
- * @version 1.0, 2016-07-11
+ * @version 1.1, 2016-10-14
  *
  */
 public class A0002_AddTwoNumbers {
 
 	public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
-		if (l1 == null)
-			return l2;
-		if (l2 == null)
-			return l1;
+		if (l1 == null) return l2;
+		if (l2 == null) return l1;
 
-		ListNode result = null, sum = null;
+		ListNode result = new ListNode(0), current = result;
 		int carry = 0, temp = 0;
-		List<ListNode> addends = Arrays.asList(l1, l2);
-
-		while (!addends.isEmpty()) {
-			temp = carry;
-			for (ListNode listNode : addends) {
-				temp += listNode.val;
-			}
-			if (sum == null) {
-				sum = new ListNode(temp % 10);
-				result = sum;
-			} else {
-				sum.next = new ListNode(temp % 10);
-				sum = sum.next;
-			}
+		while (l1 != null && l2 != null) {
+			temp = l1.val + l2.val + carry;
+			current.next = new ListNode(temp % 10);
 			carry = temp / 10;
-
-			List<ListNode> newAddends = new ArrayList<ListNode>();
-			for (ListNode listNode : addends) {
-				if (listNode.next != null) {
-					newAddends.add(listNode.next);
-				}
-			}
-			addends = newAddends;
+			l1 = l1.next;
+			l2 = l2.next;
+			current = current.next;
+		}
+		ListNode remaining = (l1 == null) ? l2 : l1;
+		while (remaining != null) {
+			temp = remaining.val + carry;
+			current.next = new ListNode(temp % 10);
+			carry = temp / 10;
+			remaining = remaining.next;
+			current = current.next;
 		}
 		if (carry != 0) {
-			sum.next = new ListNode(carry);
+			current.next = new ListNode(carry);
 		}
-
-		return result;
+		return result.next;
 	}
 
 	/**

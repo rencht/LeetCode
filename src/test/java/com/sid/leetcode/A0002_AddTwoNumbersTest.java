@@ -39,6 +39,7 @@ public class A0002_AddTwoNumbersTest {
 		assertEquals(NUMBER_465.toString(), problem.addTwoNumbers(null, NUMBER_465).toString());
 		assertEquals(NUMBER_807.toString(), problem.addTwoNumbers(NUMBER_342, NUMBER_465).toString());
 		assertEquals(NUMBER_466.toString(), problem.addTwoNumbers(NUMBER_1, NUMBER_465).toString());
+		assertEquals(NUMBER_466.toString(), problem.addTwoNumbers(NUMBER_465, NUMBER_1).toString());
 		assertEquals(NUMBER_10000.toString(), problem.addTwoNumbers(NUMBER_1, NUMBER_9999).toString());
 	}
 
