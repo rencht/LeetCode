@@ -6,6 +6,8 @@ package com.sid.leetcode;
  * <blockquote>
  * There are two sorted arrays <b>nums1</b> and <b>nums2</b> of size m and n respectively.
  * <p>Find the median of the two sorted arrays. The overall run time complexity should be O(log (m+n)).
+ * 
+ * <p>You may assume <b>nums1</b> and <b>nums2</b> cannot be both empty.
  *
  * <p><b>Example 1:</b>
  * <blockquote>

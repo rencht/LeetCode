@@ -23,4 +23,13 @@ public class A0005_LongestPalindromicSubstringTest {
 		assertEquals("aaaa", problem.longestPalindrome("aaaabbbccc"));
 	}
 
+	@Test
+	public void testLongestPalindromeStringManacher() throws Exception {
+		assertEquals("a", problem.longestPalindromeManacher("a"));
+		assertEquals("abcba", problem.longestPalindromeManacher("abcba"));
+		assertEquals("abccba", problem.longestPalindromeManacher("abccba"));
+		assertEquals("aaaaaaaa", problem.longestPalindromeManacher("aaaaaaaa"));
+		assertEquals("aaaa", problem.longestPalindromeManacher("aaaabbbccc"));
+	}
+
 }
