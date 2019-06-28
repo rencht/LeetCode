@@ -8,16 +8,12 @@ import java.util.Map;
  *
  * <blockquote>
  * Given an array of integers, return <b>indices</b> of the two numbers such that they add up to a specific target.
- * <p>You may assume that each input would have <b><i>exactly</i></b> one solution.
+ * <p>You may assume that each input would have <b><i>exactly</i></b> one solution, and you may not use the same element twice.
  * <p><b>Example</b>:
  * <blockquote>
  * Given nums = [2, 7, 11, 15], target = 9,
  * <p>Because nums[<b>0</b>] + nums[<b>1</b>] = 2 + 7 = 9, return [<b>0</b>, <b>1</b>].
  * </blockquote>
- *
- * <p><font color='red'><b>UPDATE (2016/2/13):</b></font>
- * <p>The return format had been changed to <b>zero-based</b> indices. Please read the above updated description carefully.
- * 
  * </blockquote>
  *
  * @author Sid.Chen
@@ -26,14 +22,14 @@ import java.util.Map;
  */
 public class A0001_TwoSum {
 
-	public int[] twoSum(int[] nums, int target) {
-		Map<Integer, Integer> mapping = new HashMap<Integer, Integer>();
+	public int[] twoSum(final int[] nums, final int target) {
+		final Map<Integer, Integer> map = new HashMap<Integer, Integer>();
 		for (int i = 0; i < nums.length; i++) {
-			int other = target - nums[i];
-			if (mapping.containsKey(other)) {
-				return new int[] { mapping.get(other), i };
+			final int other = target - nums[i];
+			if (map.containsKey(other)) {
+				return new int[] { map.get(other), i };
 			}
-			mapping.put(nums[i], i);
+			map.put(nums[i], i);
 		}
 		return null;
 	}
