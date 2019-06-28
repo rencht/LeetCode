@@ -34,9 +34,6 @@ public class A0002_AddTwoNumbersTest {
 
 	@Test
 	public void testAddTwoNumbers() throws Exception {
-		assertNull(problem.addTwoNumbers(null, null));
-		assertEquals(NUMBER_342.toString(), problem.addTwoNumbers(NUMBER_342, null).toString());
-		assertEquals(NUMBER_465.toString(), problem.addTwoNumbers(null, NUMBER_465).toString());
 		assertEquals(NUMBER_807.toString(), problem.addTwoNumbers(NUMBER_342, NUMBER_465).toString());
 		assertEquals(NUMBER_466.toString(), problem.addTwoNumbers(NUMBER_1, NUMBER_465).toString());
 		assertEquals(NUMBER_466.toString(), problem.addTwoNumbers(NUMBER_465, NUMBER_1).toString());
