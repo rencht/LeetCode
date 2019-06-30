@@ -4,31 +4,27 @@ package com.sid.leetcode;
  * 9. Palindrome Number.
  *
  * <blockquote>
- * Determine whether an integer is a palindrome. Do this without extra space.
+ * Determine whether an integer is a palindrome. An integer is a palindrome when it reads the same backward as forward.
+ * Do this without extra space.
  * </blockquote>
  *
  * @author Sid.Chen
- * @version 1.0, 2016-07-26
+ * @version 1.1, 2019-06-30
  *
  */
 public class A0009_PalindromeNumber {
 
-	public boolean isPalindrome(int x) {
+	public boolean isPalindrome(final int x) {
 		if (x < 0) return false;
 		if (x < 10) return true;
-
-		int multiple = 1;
-		while (x / multiple >= 10) {
-			multiple *= 10;
+        if (x % 10 == 0) return false;
+		
+		int reverse = 0, temp = x;
+		while (temp > reverse) {
+			reverse = reverse * 10 + temp % 10;
+			temp /= 10;
 		}
-
-		while(multiple > 1) {
-			if (x / multiple != x % 10) return false;
-			x %= multiple;
-			x /= 10;
-			multiple /= 100;
-		}
-		return true;
+		return reverse == temp || reverse / 10 == temp;
 	}
 
 }
