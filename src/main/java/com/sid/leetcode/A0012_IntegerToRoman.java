@@ -14,15 +14,19 @@ package com.sid.leetcode;
  */
 public class A0012_IntegerToRoman {
 
-	public String intToRoman(int num) {
+	public String intToRoman(final int num) {
 		final int[] INTEGER = { 1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1 };
 		final String[] ROMAN = { "M", "CM", "D", "CD", "C", "XC", "L", "XL", "X", "IX", "V", "IV", "I" };
 
-		StringBuilder buffer = new StringBuilder();
+		final StringBuilder buffer = new StringBuilder();
+		int temp = num;
 		for (int i = 0; i < INTEGER.length; i++) {
-			while (num >= INTEGER[i]) {
+			if (temp == 0) {
+				break;
+			}
+			while (temp >= INTEGER[i]) {
 				buffer.append(ROMAN[i]);
-				num -= INTEGER[i];
+				temp -= INTEGER[i];
 			}
 		}
 		return buffer.toString();
