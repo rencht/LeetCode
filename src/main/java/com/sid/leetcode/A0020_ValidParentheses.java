@@ -1,7 +1,5 @@
 package com.sid.leetcode;
 
-import java.util.HashMap;
-import java.util.Map;
 import java.util.Stack;
 
 /**
@@ -21,21 +19,19 @@ import java.util.Stack;
  */
 public class A0020_ValidParentheses {
 
-	public boolean isValid(String s) {
-		if (s.length() % 2 != 0) return false;
+	public boolean isValid(final String s) {
+		if ("".equals(s)) return true;
+        if (s.length() % 2 != 0) return false;
 
-		final Map<Character, Character> MAP = new HashMap<Character, Character>();
-		MAP.put('(', ')');
-		MAP.put('[', ']');
-		MAP.put('{', '}');
-
-		Stack<Character> stack = new Stack<Character>();
+		final Stack<Character> stack = new Stack<Character>();
 		for (char c : s.toCharArray()) {
-			if (MAP.containsKey(c)) {
+			if (c == '(' || c == '[' || c == '{') {
 				stack.push(c);
 			} else {
 				if (stack.isEmpty()) return false;
-				if (MAP.get(stack.pop()) != c) return false;
+                if (c == ')' && stack.pop() != '(') return false;
+				if (c == ']' && stack.pop() != '[') return false;
+                if (c == '}' && stack.pop() != '{') return false;
 			}
 		}
 		return stack.isEmpty();

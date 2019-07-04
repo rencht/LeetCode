@@ -39,15 +39,14 @@ public class A0013_RomanToInteger {
 		ROMAN['I' - 'A'] = 1;
 
 		int integer = 0;
-		for (int i = 0; i < s.length(); i++) {
-			if (i == s.length() - 1) {
-				integer += ROMAN[s.charAt(i) - 'A'];
-			} else if (ROMAN[s.charAt(i) - 'A'] < ROMAN[s.charAt(i + 1) - 'A']) {
+		for (int i = 0; i < s.length() - 1; i++) {
+			if (ROMAN[s.charAt(i) - 'A'] < ROMAN[s.charAt(i + 1) - 'A']) {
 				integer -= ROMAN[s.charAt(i) - 'A'];
 			} else {
 				integer += ROMAN[s.charAt(i) - 'A'];
 			}
 		}
+		integer += ROMAN[s.charAt(s.length()- 1) - 'A'];
 		return integer;
 	}
 
