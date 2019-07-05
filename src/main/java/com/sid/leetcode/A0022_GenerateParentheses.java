@@ -45,50 +45,51 @@ public class A0022_GenerateParentheses {
 	}
 
 	private String getFirst(final int n) {
-		StringBuilder buffer = new StringBuilder(n * 2);
+        final char[] chars = new char[n * 2];
 		for (int i = 0; i < n; i++) {
-			buffer.append(LEFT);
+			
+            chars[i] = LEFT;
+            chars[n + i] = RIGHT;
 		}
-		for (int i = 0; i < n; i++) {
-			buffer.append(RIGHT);
-		}
-		return buffer.toString();
+		return String.valueOf(chars);
 	}
 
 	private String getLast(final int n) {
-		StringBuilder buffer = new StringBuilder(n * 2);
+		final char[] chars = new char[n * 2];
 		for (int i = 0; i < n; i++) {
-			buffer.append(LEFT).append(RIGHT);
+            chars[i * 2] = LEFT;
+            chars[i * 2 + 1] = RIGHT;
 		}
-		return buffer.toString();
+		return String.valueOf(chars);
 	}
 
 	private String getNext(final String current) {
-		char[] chars = current.toCharArray();
+		final char[] chars = current.toCharArray();
 
 		int i = chars.length - 2;
+        int leftCount = 0;
 		int rightCount = 1;
-		for (; i > 1; i--) {
+		for (; i > 0; i--) {
 			if (chars[i] == LEFT) {
-				rightCount--;
+                if (rightCount - leftCount == 1) {
+                    leftCount++;
+                }
+                else {
+                    chars[i] = RIGHT;
+                    chars[i + 1] = LEFT;
+                    rightCount--;
+                    break;
+                }
 			} else {
-				if (chars[i - 1] == LEFT && rightCount > 0) {
-					chars[i - 1] = RIGHT;
-					chars[i] = LEFT;
-					break;
-				}
 				rightCount++;
 			}
 		}
-		int j = i + 1;
-		for (int k = j; k < chars.length; k++) {
-			if (chars[k] == LEFT) {
-				chars[j] = LEFT;
-				j++;
-			}
+		int j = i + 2;
+		for (int k = 0; k < leftCount; k++) {
+            chars[j++] = LEFT;
 		}
-		for (; j < chars.length; j++) {
-			chars[j] = RIGHT;
+		for (int k = 0; k < rightCount; k++) {
+			chars[j++] = RIGHT;
 		}
 		return String.valueOf(chars);
 	}
