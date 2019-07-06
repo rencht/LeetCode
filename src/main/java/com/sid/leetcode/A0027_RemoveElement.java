@@ -21,20 +21,13 @@ public class A0027_RemoveElement {
 	public int removeElement(int[] nums, int val) {
 		if (nums == null || nums.length == 0) return 0;
 
-		int length = 0;
-		int i = 0, max = nums.length - 1;
-		while (i <= max) {
+		int index = 0;
+		for (int i = 0; i < nums.length; i++) {
 			if (nums[i] != val) {
-				length++;
-				i++;
-			} else {
-				nums[i] = nums[i] ^ nums[max];
-				nums[max] = nums[i] ^ nums[max];
-				nums[i] = nums[i] ^ nums[max];
-				max--;
+				nums[index++] = nums[i];
 			}
 		}
-		return length;
+		return index;
 	}
 
 }

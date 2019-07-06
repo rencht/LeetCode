@@ -21,7 +21,7 @@ public class A0027_RemoveElementTest {
 		{
 			int[] ints = new int[] { 3, 2, 2, 3 };
 			assertEquals(2, problem.removeElement(ints, 3));
-			assertArrayEquals(new int[] { 2, 2, 3, 3 }, ints);
+			assertArrayEquals(new int[] { 2, 2, 2, 3 }, ints);
 		}
 	}
 
