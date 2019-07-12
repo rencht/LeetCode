@@ -1,5 +1,7 @@
 package com.sid.leetcode;
 
+import java.util.Stack;
+
 /**
  * 32. Longest Valid Parentheses.
  *
@@ -45,6 +47,25 @@ public class A0032_LongestValidParentheses {
 			}
 		}
 		return longest;
+	}
+
+	public int longestValidParenthesesStack(String s) {
+		int maxans = 0;
+        Stack<Integer> stack = new Stack<Integer>();
+        stack.push(-1);
+        for (int i = 0; i < s.length(); i++) {
+            if (s.charAt(i) == '(') {
+                stack.push(i);
+            } else {
+                stack.pop();
+                if (stack.empty()) {
+                    stack.push(i);
+                } else {
+                    maxans = Math.max(maxans, i - stack.peek());
+                }
+            }
+        }
+        return maxans;
 	}
 
 }
