@@ -3,107 +3,69 @@ package com.sid.leetcode;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import java.util.Stack;
 
 /**
  * 40. Combination Sum II.
  *
  * <blockquote>
- * Given a collection of candidate numbers (<b>C</b>) and a target number (<b>T</b>), find all unique combinations in <b>C</b> where the candidate numbers sums to <b>T</b>.
- * <p>Each number in <b>C</b> may only be used <b>once</b> in the combination.
+ * Given a collection of candidate numbers (<b>candidates</b>) and a target number (<b>target</b>), find all unique combinations in <b>candidates</b> where the candidate numbers sums to <b>target</b>.
+ * <p>Each number in <b>candidates</b> may only be used <b>once</b> in the combination.
  * <p><b>Note:</b>
- * <blockquote>All numbers (including target) will be positive integers.</blockquote>
- * <blockquote>The solution set must not contain duplicate combinations.</blockquote>
- * <p>For example, given candidate set <font color='#D02572'>[10, 1, 2, 7, 6, 1, 5]</font> and target <font color='#D02572'>8</font>,
- * <p>A solution set is: 
- * <p>[
- * <p><pre>[1, 7],</pre>
- * <p><pre>[1, 2, 5],</pre>
- * <p><pre>[2, 6],</pre>
- * <p><pre>[1, 1, 6]</pre>
- * <p>]
+ * <li>All numbers (including target) will be positive integers.</li>
+ * <li>The solution set must not contain duplicate combinations.</li>
+ * 
+ * <p>
+ * <b>Example 1:</b>
+ * <blockquote>
+ * <b>Input:</b> candidates = [ 10, 1, 2, 7, 6, 1, 5 ], target = 8
+ * <p><b>A solution set is:</b> [ [ 1, 7 ], [ 1, 2, 5 ], [ 2, 6 ], [ 1, 1, 6 ] ]
+ * </blockquote>
+ * 
+ * <p>
+ * <b>Example 2:</b>
+ * <blockquote>
+ * <b>Input:</b> candidates = [ 2, 5, 2, 1, 2 ], target = 5
+ * <p><b>A solution set is:</b> [ [ 1, 2, 2 ], [ 5 ] ]
+ * </blockquote>
  * </blockquote>
  *
  * @author Sid.Chen
- * @version 1.0, 2016-09-07
+ * @version 1.0, 2019-07-13
  *
  */
 public class A0040_CombinationSumII {
 
 	public List<List<Integer>> combinationSum2(int[] candidates, int target) {
 		Arrays.sort(candidates);
-
-		List<List<Integer>> combinations = new ArrayList<List<Integer>>();
-		CombinationState state = new CombinationState(candidates, target, candidates.length);
-		do {
-			int candidate = candidates[state.index];
-			if (candidate < state.target) {
-				if (candidate <= (state.target >> 1)) {
-					state.addCandidate();
-				} else {
-					state.nextCandidate(false);
-				}
-				continue;
-			}
-
-			if (candidate == state.target) {
-				state.combination.add(candidate);
-				combinations.add(new ArrayList<Integer>(state.combination));
-				state.combination.remove(state.combination.size() - 1);
-			}
-			if (state.stack.isEmpty()) break;
-			state.backtrack();
-		} while (state.isStateValid());
-		return combinations;
+        return combinationSum(candidates, 0, target);
 	}
 
-	class CombinationState {
-		int[] candidates;
-		int index;
-		int target;
-		int length;
-		Stack<Integer> stack;
-		List<Integer> combination;
+	private List<List<Integer>> combinationSum(final int[] candidates, final int start, final int target) {
+        final List<List<Integer>> result = new ArrayList<List<Integer>>();
+        
+        for (int i = start; i < candidates.length; i++) {
+            if (i > start && candidates[i] == candidates[i - 1]) continue;
 
-		CombinationState(final int[] candidates, final int target, final int length) {
-			this.candidates = candidates;
-			index = 0;
-			this.target = target;
-			this.length = length;
-			stack = new Stack<Integer>();
-			combination = new ArrayList<Integer>();
-		}
-
-		void addCandidate() {
-			stack.push(index);
-			target -= candidates[index];
-			combination.add(candidates[index]);
-			nextCandidate(false);
-		}
-
-		void nextCandidate(final boolean equals) {
-			index++;
-			if (isStateValid()) {
-				if (equals && candidates[index] == candidates[index - 1]) {
-					nextCandidate(equals);
-				}
-			} else {
-				backtrack();
-			}
-		}
-
-		void backtrack() {
-			if (!stack.isEmpty()) {
-				index = stack.pop();
-				target += candidates[index];
-				combination.remove(combination.size() - 1);
-				nextCandidate(true);
-			}
-		}
-
-		boolean isStateValid() {
-			return index < length;
-		}
-	}
+            final int candidate = candidates[i];
+            if (candidate == target) {
+                final List<Integer> temp = new ArrayList<Integer>();
+                temp.add(candidate);
+                result.add(temp);
+            }
+            else if (candidate < target) {
+                final List<List<Integer>> list = combinationSum(candidates, i + 1, target - candidate);
+                if (!list.isEmpty()) {
+                    for (final List<Integer> temp : list) {
+                    	temp.add(0, candidate);
+                        result.add(temp);
+                    }
+                }
+            }
+            else {
+                break;
+            }
+        }
+        return result;
+    }
 
 }
