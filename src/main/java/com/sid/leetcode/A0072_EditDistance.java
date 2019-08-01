@@ -1,7 +1,7 @@
 package com.sid.leetcode;
 
 /**
- * 71. Edit Distance.
+ * 72. Edit Distance.
  *
  * <blockquote>
  * Given two words word 1 and word2, find the minimum number of operations required to convert word1 to word2.
