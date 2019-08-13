@@ -1,5 +1,7 @@
 package com.sid.leetcode;
 
+import com.sid.leetcode.data.ListNode;
+
 /**
  * 83. Remove Duplicates from Sorted List.
  *
@@ -43,33 +45,5 @@ public class A0083_RemoveDuplicatesFromSortedList {
 
         return head;
     }
-
-	/**
-	 * Definition for singly-linked list.
-	 */
-	static class ListNode {
-
-		int val;
-		ListNode next;
-
-		ListNode(int x) {
-			val = x;
-		}
-
-		ListNode(int x, ListNode next) {
-			val = x;
-			this.next = next;
-		}
-
-		@Override
-		public String toString() {
-			if (next == null) {
-				return String.valueOf(val);
-			} else {
-				return val + " -> " + next.toString();
-			}
-		}
-
-	}
 
 }

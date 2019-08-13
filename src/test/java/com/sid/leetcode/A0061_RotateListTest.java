@@ -1,11 +1,12 @@
 package com.sid.leetcode;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNull;
 
 import org.junit.Before;
 import org.junit.Test;
 
-import com.sid.leetcode.A0061_RotateList.ListNode;
+import com.sid.leetcode.data.ListNode;
 
 public class A0061_RotateListTest {
 
@@ -19,18 +20,8 @@ public class A0061_RotateListTest {
 	@Test
 	public void testRotateRight() throws Exception {
 		assertNull(problem.rotateRight(null, 1));
-
-		{
-			final ListNode node12345 = new ListNode(1, new ListNode(2, new ListNode(3, new ListNode(4, new ListNode(5)))));
-			final ListNode node45123 = new ListNode(4, new ListNode(5, new ListNode(1, new ListNode(2, new ListNode(3)))));
-			assertEquals(node45123.toString(), problem.rotateRight(node12345, 2).toString());
-		}
-
-		{
-			final ListNode node012 = new ListNode(0, new ListNode(1, new ListNode(2)));
-			final ListNode node201 = new ListNode(2, new ListNode(0, new ListNode(1)));
-			assertEquals(node201.toString(), problem.rotateRight(node012, 4).toString());
-		}
+		assertEquals("4>5>1>2>3", problem.rotateRight(new ListNode(1, 2, 3, 4, 5), 2).toString());
+		assertEquals("2>0>1", problem.rotateRight(new ListNode(0, 1, 2), 4).toString());
 	}
 
 }

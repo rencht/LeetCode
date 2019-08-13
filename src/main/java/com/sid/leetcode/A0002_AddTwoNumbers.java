@@ -1,5 +1,7 @@
 package com.sid.leetcode;
 
+import com.sid.leetcode.data.ListNode;
+
 /**
  * 2. Add Two Numbers.
  *
@@ -47,34 +49,6 @@ public class A0002_AddTwoNumbers {
 		}
 
 		return result;
-	}
-
-	/**
-	 * Definition for singly-linked list.
-	 */
-	static class ListNode {
-
-		int val;
-		ListNode next;
-
-		ListNode(int x) {
-			val = x;
-		}
-
-		ListNode(int x, ListNode next) {
-			val = x;
-			this.next = next;
-		}
-
-		@Override
-		public String toString() {
-			if (next == null) {
-				return String.valueOf(val);
-			} else {
-				return val + " -> " + next.toString();
-			}
-		}
-
 	}
 
 }

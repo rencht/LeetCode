@@ -1,11 +1,12 @@
 package com.sid.leetcode;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNull;
 
 import org.junit.Before;
 import org.junit.Test;
 
-import com.sid.leetcode.A0024_SwapNodesInPairs.ListNode;
+import com.sid.leetcode.data.ListNode;
 
 public class A0024_SwapNodesInPairsTest {
 
@@ -19,20 +20,9 @@ public class A0024_SwapNodesInPairsTest {
 	@Test
 	public void testSwapPairs() throws Exception {
 		assertNull(problem.swapPairs(null));
-
-		assertEquals(new ListNode(1).toString(), problem.swapPairs(new ListNode(1)).toString());
-
-		{
-			ListNode node1234 = new ListNode(1, new ListNode(2, new ListNode(3, new ListNode(4))));
-			ListNode node2143 = new ListNode(2, new ListNode(1, new ListNode(4, new ListNode(3))));
-			assertEquals(node2143.toString(), problem.swapPairs(node1234).toString());
-		}
-
-		{
-			ListNode node12345 = new ListNode(1, new ListNode(2, new ListNode(3, new ListNode(4, new ListNode(5)))));
-			ListNode node21435 = new ListNode(2, new ListNode(1, new ListNode(4, new ListNode(3, new ListNode(5)))));
-			assertEquals(node21435.toString(), problem.swapPairs(node12345).toString());
-		}
+		assertEquals("1", problem.swapPairs(new ListNode(1)).toString());
+		assertEquals("2>1>4>3", problem.swapPairs(new ListNode(1, 2, 3, 4)).toString());
+		assertEquals("2>1>4>3>5", problem.swapPairs(new ListNode(1, 2, 3, 4, 5)).toString());
 	}
 
 }

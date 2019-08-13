@@ -1,5 +1,7 @@
 package com.sid.leetcode;
 
+import com.sid.leetcode.data.ListNode;
+
 /**
  * 21. Merge Two Sorted Lists.
  *
@@ -37,34 +39,6 @@ public class A0021_MergeTwoSortedLists {
 			current.next = p2;
 		}
 		return dummy.next;
-	}
-
-	/**
-	 * Definition for singly-linked list.
-	 */
-	static class ListNode {
-
-		int val;
-		ListNode next;
-
-		ListNode(int x) {
-			val = x;
-		}
-
-		ListNode(int x, ListNode next) {
-			val = x;
-			this.next = next;
-		}
-
-		@Override
-		public String toString() {
-			if (next == null) {
-				return String.valueOf(val);
-			} else {
-				return val + " -> " + next.toString();
-			}
-		}
-
 	}
 
 }

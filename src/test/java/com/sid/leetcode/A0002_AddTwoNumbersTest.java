@@ -1,43 +1,27 @@
 package com.sid.leetcode;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 import org.junit.Before;
 import org.junit.Test;
 
-import com.sid.leetcode.A0002_AddTwoNumbers.ListNode;
+import com.sid.leetcode.data.ListNode;
 
 public class A0002_AddTwoNumbersTest {
 
 	private A0002_AddTwoNumbers problem;
 
-	private ListNode NUMBER_1;
-	private ListNode NUMBER_342;
-	private ListNode NUMBER_465;
-	private ListNode NUMBER_466;
-	private ListNode NUMBER_807;
-	private ListNode NUMBER_9999;
-	private ListNode NUMBER_10000;
-
 	@Before
 	public void setUp() throws Exception {
 		problem = new A0002_AddTwoNumbers();
-
-		NUMBER_1 = new ListNode(1);
-		NUMBER_342 = new ListNode(2, new ListNode(4, new ListNode(3)));
-		NUMBER_465 = new ListNode(5, new ListNode(6, new ListNode(4)));
-		NUMBER_466 = new ListNode(6, new ListNode(6, new ListNode(4)));
-		NUMBER_807 = new ListNode(7, new ListNode(0, new ListNode(8)));
-		NUMBER_9999 = new ListNode(9, new ListNode(9, new ListNode(9, new ListNode(9))));
-		NUMBER_10000 = new ListNode(0, new ListNode(0, new ListNode(0, new ListNode(0, new ListNode(1)))));
 	}
 
 	@Test
 	public void testAddTwoNumbers() throws Exception {
-		assertEquals(NUMBER_807.toString(), problem.addTwoNumbers(NUMBER_342, NUMBER_465).toString());
-		assertEquals(NUMBER_466.toString(), problem.addTwoNumbers(NUMBER_1, NUMBER_465).toString());
-		assertEquals(NUMBER_466.toString(), problem.addTwoNumbers(NUMBER_465, NUMBER_1).toString());
-		assertEquals(NUMBER_10000.toString(), problem.addTwoNumbers(NUMBER_1, NUMBER_9999).toString());
+		assertEquals("7>0>8", problem.addTwoNumbers(new ListNode(2, 4, 3), new ListNode(5, 6, 4)).toString());
+		assertEquals("6>6>4", problem.addTwoNumbers(new ListNode(1), new ListNode(5, 6, 4)).toString());
+		assertEquals("6>6>4", problem.addTwoNumbers(new ListNode(5, 6, 4), new ListNode(1)).toString());
+		assertEquals("0>0>0>0>1", problem.addTwoNumbers(new ListNode(1), new ListNode(9, 9, 9, 9)).toString());
 	}
 
 }
