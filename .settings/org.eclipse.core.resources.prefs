@@ -1,4 +1,4 @@
 eclipse.preferences.version=1
-encoding//src/main/java/com/sid/leetcode/A0031_NextPermutation.java=UTF-8
-encoding//src/main/java/com/sid/leetcode/A0060_PermutationSequence.java=UTF-8
+encoding//src/main/java/com/sid/leetcode/problem/permutation/NextPermutation.java=UTF-8
+encoding//src/main/java/com/sid/leetcode/problem/permutation/PermutationSequence.java=UTF-8
 encoding/<project>=UTF-8
